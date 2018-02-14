@@ -27,7 +27,7 @@ bool operator==(const TMonom& t1, const TMonom& t2) {
 }
 
 template <class T>
-class THeadList:public TList {
+class THeadList : public TList {
 protected:
 	TList *pHead;
 public:
@@ -42,6 +42,7 @@ public:
 		delete pHead;
 	}
 
+
 	void insfirst(const T& elem) {
 		TList::insfirst(elem);
 		pHead->pNext = pFirst;
@@ -52,3 +53,5 @@ public:
 		pHead->pNext = pFirst;
 	}
 };
+
+

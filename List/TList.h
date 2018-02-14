@@ -19,7 +19,7 @@ public:
 		pos = -1;
 	}
 
-	void insfirst(const T& elem) {
+	virtual void insfirst(const T& elem) {
 		TLink<T> *tmp = new TLink <T>;
 		tmp->value = elem;
 		tmp->pNext = pFirst;
@@ -51,7 +51,7 @@ public:
 		size++;
 	}
 
-	void inscurr(const T& elem) {
+	virtual void inscurr(const T& elem) {
 		if (pCurr == pFirst)
 			insfirst(elem);
 		else {
@@ -85,7 +85,7 @@ public:
 
 	T getElelm(){ return pCurr->value; }
 
-	void deleteFirst() {
+	virtual void deleteFirst() {
 		if (size == 1) {
 			delete pFirst;
 			pFirst = pLast = pCurr = pPrev = pStop;
@@ -108,7 +108,7 @@ public:
 		return pFirst == pStop;
 	}
 
-	void delLast(){
+	virtual void delLast(){
 		if (pLast == pFirst) deleteFirst();
 		else{
 			for (Reset(); !(pCurr->pNext == pStop); goNext()){}
@@ -122,7 +122,7 @@ public:
 
 
 
-	void delCurr(){
+	virtual void delCurr(){
 		if (pCurr == pFirst)
 			deleteFirst();
 		else
@@ -144,7 +144,7 @@ public:
 	}
 
 
-	void sortInput(T elem){
+	virtual void sortInput(T elem){
 		if (pFirst == pStop || elem < pFirst->value) { insfirst(elem); return; }
 		if (elem >= pLast->value){ inslast(elem); return; }
 		for (Reset(); !isEnd(); goNext()){

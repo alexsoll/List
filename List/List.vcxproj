@@ -80,6 +80,7 @@
   <ItemGroup>
     <ClInclude Include="THeadList.h" />
     <ClInclude Include="TList.h" />
+    <ClInclude Include="TPolinom.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
